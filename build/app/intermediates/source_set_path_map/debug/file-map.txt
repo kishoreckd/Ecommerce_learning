@@ -1,0 +1,11 @@
+com.example.ecommerce_app-core-1.6.0-0 /Users/rhino/.gradle/caches/transforms-3/97bd94499219e01908356ea88b5a9b7c/transformed/core-1.6.0/res
+com.example.ecommerce_app-jetified-window-1.0.0-beta04-1 /Users/rhino/.gradle/caches/transforms-3/d760da0e6a0d4a6e72b519ef7ba4ad30/transformed/jetified-window-1.0.0-beta04/res
+com.example.ecommerce_app-jetified-annotation-experimental-1.1.0-2 /Users/rhino/.gradle/caches/transforms-3/dd85981a62dce410bfc2e80239ea0693/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.ecommerce_app-jetified-window-java-1.0.0-beta04-3 /Users/rhino/.gradle/caches/transforms-3/ed1b426f4e8f292c12fb125f213e9093/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.ecommerce_app-debug-4 /Users/rhino/Downloads/flutter_app/kishore_ecom/android/app/src/debug/res
+com.example.ecommerce_app-main-5 /Users/rhino/Downloads/flutter_app/kishore_ecom/android/app/src/main/res
+com.example.ecommerce_app-pngs-6 /Users/rhino/Downloads/flutter_app/kishore_ecom/build/app/generated/res/pngs/debug
+com.example.ecommerce_app-resValues-7 /Users/rhino/Downloads/flutter_app/kishore_ecom/build/app/generated/res/resValues/debug
+com.example.ecommerce_app-mergeDebugResources-8 /Users/rhino/Downloads/flutter_app/kishore_ecom/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.ecommerce_app-mergeDebugResources-9 /Users/rhino/Downloads/flutter_app/kishore_ecom/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.ecommerce_app-merged_res-10 /Users/rhino/Downloads/flutter_app/kishore_ecom/build/app/intermediates/merged_res/debug

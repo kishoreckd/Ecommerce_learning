@@ -1,0 +1,1 @@
+ /Users/rhino/Downloads/flutter_app/kishore_ecom/.dart_tool/flutter_gen/gen_l10n/app_localizations_en.dart /Users/rhino/Downloads/flutter_app/kishore_ecom/.dart_tool/flutter_gen/gen_l10n/app_localizations.dart:  /Users/rhino/Downloads/flutter_app/kishore_ecom/l10n.yaml /Users/rhino/Downloads/flutter_app/kishore_ecom/lib/src/localization/app_en.arb

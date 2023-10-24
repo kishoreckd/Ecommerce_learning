@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ecommerce_app/src/models/app_user.dart';
+import 'package:ecommerce_app/src/routing/app_router.dart';
 import 'package:ecommerce_app/src/constants/breakpoints.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/features/account/account_screen.dart';
@@ -47,21 +48,18 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           const ShoppingCartIcon(),
           if (user != null) ...[
             ActionTextButton(
-              key: MoreMenuButton.ordersKey,
-              text: 'Orders'.hardcoded,
-              onPressed: () =>context.go('/orders')
-            ),
+                key: MoreMenuButton.ordersKey,
+                text: 'Orders'.hardcoded,
+                onPressed: () => context.goNamed(AppRoute.orders.name)),
             ActionTextButton(
-              key: MoreMenuButton.accountKey,
-              text: 'Account'.hardcoded,
-              onPressed: () => context.go('/account')
-            ),
+                key: MoreMenuButton.accountKey,
+                text: 'Account'.hardcoded,
+                onPressed: () => context.goNamed(AppRoute.account.name)),
           ] else
             ActionTextButton(
-              key: MoreMenuButton.signInKey,
-              text: 'Sign In'.hardcoded,
-              onPressed: () => () => context.go('/signIn')
-              ),
+                key: MoreMenuButton.signInKey,
+                text: 'Sign In'.hardcoded,
+                onPressed: () => () => context.goNamed(AppRoute.signIn.name)),
         ],
       );
     }

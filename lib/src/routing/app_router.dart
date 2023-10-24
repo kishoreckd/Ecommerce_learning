@@ -7,6 +7,14 @@ import 'package:ecommerce_app/src/features/products_list/products_list_screen.da
 import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_state.dart';
 import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_screen.dart';
 
+enum AppRoute {
+  home,
+  cart,
+  orders,
+  account,
+  signIn
+}
+
 /**Final varible has been used for gorouter */
 final gorouter = GoRouter(
   initialLocation: '/',
@@ -14,6 +22,7 @@ final gorouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      name: AppRoute.home.name,
       builder: (context, state) => const ProductsListScreen(),
       routes: [
         GoRoute(
@@ -25,6 +34,7 @@ final gorouter = GoRouter(
         ),
         GoRoute(
           path: 'orders',
+          name: AppRoute.cart.name,
           pageBuilder: (context, state) => MaterialPage(
               key: state.pageKey,
               fullscreenDialog: true,
@@ -32,6 +42,7 @@ final gorouter = GoRouter(
         ),
         GoRoute(
           path: 'account',
+          name: AppRoute.account.name,
           pageBuilder: (context, state) => MaterialPage(
               key: state.pageKey,
               fullscreenDialog: true,
@@ -39,10 +50,11 @@ final gorouter = GoRouter(
         ),
         GoRoute(
           path: 'signIn',
+          name: AppRoute.signIn.name,
           pageBuilder: (context, state) => MaterialPage(
               key: state.pageKey,
               fullscreenDialog: true,
-              child: EmailPasswordSignInScreen(
+              child: const EmailPasswordSignInScreen(
                 formType: EmailPasswordSignInFormType.signIn,
               )),
         ),

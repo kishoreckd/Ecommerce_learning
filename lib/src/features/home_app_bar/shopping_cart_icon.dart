@@ -21,7 +21,7 @@ class ShoppingCartIcon extends StatelessWidget {
           child: IconButton(
             key: shoppingCartIconKey,
             icon: const Icon(Icons.shopping_cart),
-            onPressed: () => GoRouter.of(context).goNamed(AppRoute.cart.name),
+            onPressed: () => GoRouter.of(context).pushNamed(AppRoute.cart.name),
             // onPressed: () => Navigator.of(context).push(
             //   MaterialPageRoute(
             //     fullscreenDialog: true,

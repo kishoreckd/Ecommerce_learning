@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ecommerce_app/src/app.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
+// ignore:depend_on_referenced_packages
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // turn off the # in the URLs on the web
+  usePathUrlStrategy();
+  // ensure URL changes in the address bar when using push / pushNamed
+  // more info here: https://docs.google.com/document/d/1VCuB85D5kYxPR3qYOjVmw8boAGKb7k62heFyfFHTOvw/edit
+  // GoRouter.optionURLReflectsImperativeAPIs = true;
   // * Register error handlers. For more info, see:
   // * https://docs.flutter.dev/testing/errors
-
-  /**It turns off the url on the web */
-  usePathUrlStrategy();
-
   registerErrorHandlers();
   // * Entry point of the app
   runApp(const MyApp());

@@ -1,12 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:ecommerce_app/src/models/app_user.dart';
-import 'package:ecommerce_app/src/routing/app_router.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
-import 'package:ecommerce_app/src/features/account/account_screen.dart';
-import 'package:ecommerce_app/src/features/orders_list/orders_list_screen.dart';
-import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_state.dart';
-import 'package:ecommerce_app/src/features/sign_in/email_password_sign_in_screen.dart';
+import 'package:ecommerce_app/src/routing/app_router.dart';
+import 'package:flutter/material.dart';
+import 'package:ecommerce_app/src/models/app_user.dart';
+import 'package:go_router/go_router.dart';
 
 enum PopupMenuOption {
   signIn,
@@ -59,11 +55,9 @@ class MoreMenuButton extends StatelessWidget {
             break;
           case PopupMenuOption.orders:
             context.pushNamed(AppRoute.orders.name);
-
             break;
           case PopupMenuOption.account:
             context.pushNamed(AppRoute.account.name);
-
             break;
         }
       },

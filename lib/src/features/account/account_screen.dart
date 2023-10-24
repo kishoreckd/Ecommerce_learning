@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:ecommerce_app/src/models/app_user.dart';
-import 'package:ecommerce_app/src/routing/app_router.dart';
-import 'package:ecommerce_app/src/constants/app_sizes.dart';
 import 'package:ecommerce_app/src/common_widgets/alert_dialogs.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
-import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
+import 'package:ecommerce_app/src/models/app_user.dart';
+import 'package:flutter/material.dart';
 import 'package:ecommerce_app/src/common_widgets/action_text_button.dart';
+import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
+import 'package:ecommerce_app/src/constants/app_sizes.dart';
+import 'package:go_router/go_router.dart';
 
 /// Simple account screen showing some user info and a logout button.
 class AccountScreen extends StatelessWidget {
@@ -21,11 +20,10 @@ class AccountScreen extends StatelessWidget {
           ActionTextButton(
             text: 'Logout'.hardcoded,
             onPressed: () async {
-              // showNotImplementedAlertDialog(context: context);
               // * Get the navigator beforehand to prevent this warning:
               // * Don't use 'BuildContext's across async gaps.
               // * More info here: https://youtu.be/bzWaMpD1LHY
-              final navigator = GoRouter.of(context);
+              final goRouter = GoRouter.of(context);
               final logout = await showAlertDialog(
                 context: context,
                 title: 'Are you sure?'.hardcoded,
@@ -34,7 +32,7 @@ class AccountScreen extends StatelessWidget {
               );
               if (logout == true) {
                 // TODO: Sign out the user.
-                gorouter.pop();
+                goRouter.pop();
               }
             },
           ),

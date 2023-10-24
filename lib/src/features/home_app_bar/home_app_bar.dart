@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ecommerce_app/src/models/app_user.dart';
 import 'package:ecommerce_app/src/constants/breakpoints.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
@@ -48,37 +49,19 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             ActionTextButton(
               key: MoreMenuButton.ordersKey,
               text: 'Orders'.hardcoded,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => const OrdersListScreen(),
-                ),
-              ),
+              onPressed: () =>context.go('/orders')
             ),
-            
             ActionTextButton(
               key: MoreMenuButton.accountKey,
               text: 'Account'.hardcoded,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => const AccountScreen(),
-                ),
-              ),
+              onPressed: () => context.go('/account')
             ),
           ] else
             ActionTextButton(
               key: MoreMenuButton.signInKey,
               text: 'Sign In'.hardcoded,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => const EmailPasswordSignInScreen(
-                    formType: EmailPasswordSignInFormType.signIn,
-                  ),
-                ),
+              onPressed: () => () => context.go('/signIn')
               ),
-            )
         ],
       );
     }

@@ -20,7 +20,7 @@ dependencies:
   flutter_riverpod: 2.3.6
   dio: ^5.3.3
   http: ^1.1.0
-
+  rxdart: 0.27.7
 
 dev_dependencies:
   flutter_test:

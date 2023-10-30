@@ -1,15 +1,14 @@
 import 'package:rxdart/subjects.dart';
 
-
 /// Ad In-memory store backend by behaviour subject that van be used to
-/// store the data for all the fake repositories in the app. 
+/// store the data for all the fake repositories in the app.
 class InMemoryStore<T> {
   InMemoryStore(T initial) : _subject = BehaviorSubject<T>.seeded(initial);
 
   /// the behaviour subject that holds the data.
   final BehaviorSubject<T> _subject;
 
-///The output stream that can be used to listen to the data.
+  ///The output stream that can be used to listen to the data.
   Stream<T> get stream => _subject.stream;
 
   ///A synchronous getter for the current value
@@ -18,7 +17,6 @@ class InMemoryStore<T> {
   /// A setter for updating the value
   set value(T value) => _subject.add(value);
 
-
-/// dont forgot to call this when done.
+  /// dont forgot to call this when done.
   void close() => _subject.close();
 }

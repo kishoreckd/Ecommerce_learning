@@ -1,15 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ecommerce_app/src/constants/app_sizes.dart';
-import 'package:ecommerce_app/src/utils/async_value_ui.dart';
 import 'package:ecommerce_app/src/common_widgets/alert_dialogs.dart';
-import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
-import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
-import 'package:ecommerce_app/src/common_widgets/action_text_button.dart';
-import 'package:ecommerce_app/src/features/authentication/domain/app_user.dart';
 import 'package:ecommerce_app/src/features/authentication/data/fake_auth_repository.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/account/account_screen_controller.dart';
+import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
+import 'package:ecommerce_app/src/utils/async_value_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:ecommerce_app/src/common_widgets/action_text_button.dart';
+import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
+import 'package:ecommerce_app/src/constants/app_sizes.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Simple account screen showing some user info and a logout button.
 class AccountScreen extends ConsumerWidget {
@@ -17,12 +16,11 @@ class AccountScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<AsyncValue>(AccountScreenControllerProvider,
-        (_, state) => state.showAlertDialogOnError(context));
-    final state = ref.watch(AccountScreenControllerProvider);
-    if (state.hasError) {
-      return Text('Error');
-    }
+    ref.listen<AsyncValue>(
+      accountScreenControllerProvider,
+      (_, state) => state.showAlertDialogOnError(context),
+    );
+    final state = ref.watch(accountScreenControllerProvider);
     return Scaffold(
       appBar: AppBar(
         title: state.isLoading
@@ -46,11 +44,10 @@ class AccountScreen extends ConsumerWidget {
                     );
                     if (logout == true) {
                       final success = await ref
-                          .read(AccountScreenControllerProvider.notifier)
+                          .read(accountScreenControllerProvider.notifier)
                           .signOut();
-                      // TODO: Sign out the user.
                       if (success) {
-                        Navigator.of(context).pop();
+                        goRouter.pop();
                       }
                     }
                   },
@@ -70,9 +67,8 @@ class UserDataTable extends ConsumerWidget {
   const UserDataTable({super.key});
 
   @override
-  Widget build(BuildContext context , WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final style = Theme.of(context).textTheme.titleSmall!;
-    // TODO: get user from auth repository
     final user = ref.watch(authStateChangesProvider).value;
     return DataTable(
       columns: [
@@ -92,7 +88,7 @@ class UserDataTable extends ConsumerWidget {
       rows: [
         _makeDataRow(
           'uid'.hardcoded,
-          user?.uid?? '',
+          user?.uid ?? '',
           style,
         ),
         _makeDataRow(
